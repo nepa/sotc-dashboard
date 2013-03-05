@@ -33,6 +33,9 @@ abstract class StatisticsChart
   /** Text for big title on chart */
   protected $chartTitle;
 
+  /** Human readable content type */
+  protected $contentTypeName;
+
   /**
    * Parameterized constructor to initialize a new statistics
    * chart for the desired content type.
@@ -43,6 +46,12 @@ abstract class StatisticsChart
    */
   public function __construct($contentType = 'noiseLevels')
   {
+    // Set title of entire picture
+    $this->pictureTitle = 'Sound of the City - Zugriffsstatistik';
+
+    // Set human readable content type
+    $this->contentTypeName = $this->mapContentType($contentType);
+
     // Connect to remote server and fetch data
     $this->client = new RESTClient($contentType);
     $this->client->refreshStatistics();
@@ -122,6 +131,46 @@ abstract class StatisticsChart
     //   autoOutput: Either create image file
     //               or embed in website
     $picture->autoOutput('SotC-UseStatistics.png');
+  }
+
+  /**
+   * Map all known content types to their human readable
+   * equivalent, so that it can be used in the chart.
+   *
+   * Right now, valid types are:
+   *   - noiseLevels
+   *   - soundSamples
+   *   - deviceInfos
+   *   - uniqueUsers
+   *   - appDownloads
+   */
+  private function mapContentType($contentType)
+  {
+    $result = '';
+
+    switch ($contentType)
+    {
+      case 'noiseLevels':
+        $result = 'Geräuschmessungen';
+        break;
+      case 'soundSamples':
+        $result = 'Audioaufnahmen';
+        break;
+      case 'deviceInfos':
+        $result = 'Geräteinformationen';
+        break;
+      case 'uniqueUsers':
+        $result = 'Individuelle Nutzer';
+        break;
+      case 'appDownloads':
+        $result = 'App Downloads';
+        break;
+      default:
+        die('<p><b>Error:</b> Cannot map invalid content type.</p>');
+        break;
+    }
+
+    return $result;
   }
 }
 
