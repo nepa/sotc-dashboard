@@ -113,6 +113,71 @@ class DateTimeHelper
   }
 
   /**
+   * Translate number of a month to the corresponding German
+   * name of it (e.g. '1' is mapped to 'Januar'). With the
+   * optional second parameter set to true, the method will
+   * return abbreviated names (e.g. '1' is mapped to 'Jan.').
+   *
+   * For invalid month numbers, the function will simply
+   * return an empty string.
+   */
+  public static function germanNameOf($month, $short = false)
+  {
+    $result = '';
+
+    if ($month == 1)
+    {
+      $result = ($short ? 'Jan.' : 'Januar');
+    }
+    else if ($month == 2)
+    {
+      $result = ($short ? 'Feb.' : 'Februar');
+    }
+    else if ($month == 3)
+    {
+      $result = ($short ? 'Mär.' : 'März');
+    }
+    else if ($month == 4)
+    {
+      $result = ($short ? 'Apr.' : 'April');
+    }
+    else if ($month == 5)
+    {
+      $result = 'Mai';
+    }
+    else if ($month == 6)
+    {
+      $result = ($short ? 'Jun.' : 'Juni');
+    }
+    else if ($month == 7)
+    {
+      $result = ($short ? 'Jul.' : 'Juli');
+    }
+    else if ($month == 8)
+    {
+      $result = ($short ? 'Aug.' : 'August');
+    }
+    else if ($month == 9)
+    {
+      $result = ($short ? 'Sep.' : 'September');
+    }
+    else if ($month == 10)
+    {
+      $result = ($short ? 'Okt.' : 'Oktober');
+    }
+    else if ($month == 11)
+    {
+      $result = ($short ? 'Nov.' : 'November');
+    }
+    else if ($month == 12)
+    {
+      $result = ($short ? 'Dez.' : 'Dezember');
+    }
+
+    return $result;
+  }
+
+  /**
    * This method is used to test getLastTwelveMonths()
    * and getTimestampsOfMonth() function.
    */
