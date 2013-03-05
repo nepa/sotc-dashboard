@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   <script>
-    ajaxRender('myDiv', 'chart.php');
+    ajaxRender('myDiv', 'chart.php?type=noiseLevels&mode=today');
 
     function ajaxRender(DivID, URL)
     {
@@ -60,21 +60,21 @@
         if (xmlhttp.readyState == 4)
         {
           var timestamp = new Date().getTime();
-          var chartURL = URL + '?' + timestamp;
+          var chartURL = URL + '&' + timestamp;
 
           // Preload image to prevent flickering
           var image = new Image();
           image.src = chartURL;
 
-          // Display image after 1 second time
-          window.setTimeout("showImage('" + DivID + "', '" + chartURL + "')", 1000);
+          // Display image after 2 second time
+          window.setTimeout("showImage('" + DivID + "', '" + chartURL + "')", 2000);
         }
       }
 
       xmlhttp.send(null)
 
       // Reload image after 3 seconds
-      window.setTimeout("ajaxRender('myDiv', 'chart.php')", 3000);
+      window.setTimeout("ajaxRender('myDiv', 'chart.php?type=noiseLevels&mode=today')", 3000);
     }
 
     function showImage(DivID, URL)
@@ -174,19 +174,29 @@
 
   <div id="content">
 
-    <h3 class="paragraph-headline">Live Statistics (Updated every 3 sec.)</h3>
+    <h3 class="paragraph-headline">Live-Statistik</h3>
 
     <div id='myDiv' style="width: 700px; height: 230px;">Fetching data...</div>
 
-    <h3 class="paragraph-headline">Long Term Evaluation (Last 12 Month)</h3>
+    <h3 class="paragraph-headline">Geräuschmessungen</h3>
 
-    <h4 class="paragraph-sub-headline">Noise Level Reports</h4>
+    <div id='chart'><img src="chart.php?type=noiseLevels&mode=last-months" alt="Ger&auml;schmessungen" /></div>
 
-    <h4 class="paragraph-sub-headline">Sound Sample Uploads</h4>
+    <h3 class="paragraph-headline">Audioaufnahmen</h3>
 
-    <h4 class="paragraph-sub-headline">Unique Users</h4>
+    <div id='chart'><img src="chart.php?type=soundSamples&mode=last-months" alt="Ger&auml;schmessungen" /></div>
 
-    <h4 class="paragraph-sub-headline">App Downloads</h4>
+    <h3 class="paragraph-headline">Geräteinformationen</h3>
+
+    <div id='chart'><img src="chart.php?type=deviceInfos&mode=last-months" alt="Ger&auml;schmessungen" /></div>
+
+    <h3 class="paragraph-headline">Individuelle Nutzer</h3>
+
+    <div id='chart'><img src="chart.php?type=uniqueUsers&mode=last-months" alt="Ger&auml;schmessungen" /></div>
+
+    <h3 class="paragraph-headline">App Downloads</h3>
+
+    <div id='chart'><img src="chart.php?type=appDownloads&mode=last-months" alt="Ger&auml;schmessungen" /></div>
 
   </div>
 
