@@ -11,7 +11,6 @@ $(document).ready(function () {
     $('div#block-soundSamples').myTabs();
     $('div#block-deviceInfos').myTabs();
     $('div#block-uniqueUsers').myTabs();
-    $('div#block-appDownloads').myTabs();
 });
 
 // Show statistics charts, when all images are loaded

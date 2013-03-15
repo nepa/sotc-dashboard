@@ -86,22 +86,6 @@
       </div>
     </div>
 
-    <!--
-    <h3 class="paragraph-headline">App Downloads</h3>
-
-    <div id="block-appDownloads">
-      <ul class="tabs">
-          <li><a href="#">Heute</a></li>
-          <li><a href="#">12 Monate</a></li>
-      </ul>
-
-      <div class="content">
-          <div><img class="chart" src="chart.php?type=appDownloads&amp;mode=today" alt="App Downloads heute" /></div>
-          <div><img class="chart" src="chart.php?type=appDownloads&amp;mode=last-months" alt="App Downloads der letzten 12 Monate" /></div>
-      </div>
-    </div>
-    -->
-
   </div>
 
   <div id="footer">Copyright &copy; 2013: <strong>Institut f&uuml;r Telematik</strong>, Universit&auml;t zu L&uuml;beck</div>
