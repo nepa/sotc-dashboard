@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Sound of the City &amp;ndash; Dashboard</title>
+  <title>Sound of the City &ndash; Dashboard</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
@@ -26,7 +26,9 @@
 
     <h3 class="paragraph-headline">Live-Statistik</h3>
 
-    <div id='myDiv' style="width: 700px; height: 230px;">Fetching data...</div>
+    <div class="content-always">
+      <div id="myDiv"><!-- AJAX will insert image here. --></div>
+    </div>
 
     <h3 class="paragraph-headline">Geräuschmessungen</h3>
 
@@ -37,8 +39,8 @@
       </ul>
 
       <div class="content">
-          <div><img class="chart" src="chart.php?type=noiseLevels&amp;mode=today" alt="Ger&amp;auml;schmessungen heute" /></div>
-          <div><img class="chart" src="chart.php?type=noiseLevels&amp;mode=last-months" alt="Ger&amp;auml;schmessungen der letzten 12 Monate" /></div>
+          <div><img class="chart" src="chart.php?type=noiseLevels&amp;mode=today" alt="Ger&auml;schmessungen heute" /></div>
+          <div><img class="chart" src="chart.php?type=noiseLevels&amp;mode=last-months" alt="Ger&auml;schmessungen der letzten 12 Monate" /></div>
       </div>
     </div>
 
@@ -65,8 +67,8 @@
       </ul>
 
       <div class="content">
-          <div><img class="chart" src="chart.php?type=deviceInfos&amp;mode=today" alt="Ger&amp;auml;teinformationen heute" /></div>
-          <div><img class="chart" src="chart.php?type=deviceInfos&amp;mode=last-months" alt="Ger&amp;auml;teinformationen der letzten 12 Monate" /></div>
+          <div><img class="chart" src="chart.php?type=deviceInfos&amp;mode=today" alt="Ger&auml;teinformationen heute" /></div>
+          <div><img class="chart" src="chart.php?type=deviceInfos&amp;mode=last-months" alt="Ger&auml;teinformationen der letzten 12 Monate" /></div>
       </div>
     </div>
 
@@ -84,6 +86,7 @@
       </div>
     </div>
 
+    <!--
     <h3 class="paragraph-headline">App Downloads</h3>
 
     <div id="block-appDownloads">
@@ -97,10 +100,11 @@
           <div><img class="chart" src="chart.php?type=appDownloads&amp;mode=last-months" alt="App Downloads der letzten 12 Monate" /></div>
       </div>
     </div>
+    -->
 
   </div>
 
-  <div id="footer">Copyright &amp;copy; 2013: <strong>Institut f&amp;uuml;r Telematik</strong>, Universit&amp;auml;t zu L&amp;uuml;beck</div>
+  <div id="footer">Copyright &copy; 2013: <strong>Institut f&uuml;r Telematik</strong>, Universit&auml;t zu L&uuml;beck</div>
 </body>
 
 </html>

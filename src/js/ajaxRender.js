@@ -73,5 +73,5 @@ function ajaxRender(DivID, URL)
 
 function showImage(DivID, URL)
 {
-  document.getElementById(DivID).innerHTML="<img src='" + URL + "'/>";
+  document.getElementById(DivID).innerHTML="<img src='" + URL + "' alt='Live-Statistik' />";
 }
