@@ -13,7 +13,7 @@
   <!-- Local fallback, in case CDN fails -->
   <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js" type="text/javascript"><\/script>')</script>
 
-  <script src="js/ajaxRender.js" type="text/javascript"></script>
+  <script src="js/refreshImage.js" type="text/javascript"></script>
   <script src="js/myTabs.js" type="text/javascript"></script>
   <script src="js/bootstrap.js" type="text/javascript"></script>
 </head>
@@ -27,7 +27,7 @@
     <h3 class="paragraph-headline">Live-Statistik</h3>
 
     <div class="content-always">
-      <div id="myDiv"><!-- AJAX will insert image here. --></div>
+      <div><img id="live" class="chart" src="#" alt="Live-Statistik" /></div>
     </div>
 
     <h3 class="paragraph-headline">Geräuschmessungen</h3>

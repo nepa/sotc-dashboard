@@ -3,7 +3,7 @@
  */
 
 // Load live chart for the very first time
-ajaxRender('myDiv', 'chart.php?type=noiseLevels&mode=today');
+refreshImage('chart.php?type=noiseLevels&mode=today');
 
 // Create tabs for each block
 $(document).ready(function () {
