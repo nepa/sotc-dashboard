@@ -4,13 +4,13 @@
   * A default selected tab can be provided via a query
   * parameter in the url:
   *
-  *   http://example.com?content=3
+  *   http://example.com?default=3
   */
 (function ($) {
     $.fn.myTabs = function (options) {
         options = $.extend({
             'tabSelectedClass': 'current', // the name of the class added to the selected tab
-            'queryName': 'content' // the query parameter name for the default tab
+            'queryName': 'default' // the query parameter name for the default tab
         }, options);
         return this.each(function () {
 
@@ -22,7 +22,7 @@
                 $base = $(this),
                 $tabContainer = $base.find('.tabs'),
                 $tabs = $tabContainer.find('li'),
-                $tabContentContainer = $base.find('.content'),
+                $tabContentContainer = $base.find('.tabs-content'),
                 $tabContent = $tabContentContainer.find(' > div');
 
             /**

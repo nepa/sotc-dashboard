@@ -16,5 +16,5 @@ $(document).ready(function () {
 // Show statistics charts, when all images are loaded
 $(window).load(function() {
     $('img.chart').fadeIn(700);
-    $('div.content').css('background-image', 'none');
+    $('div.tabs-content').css('background-image', 'none');
 });

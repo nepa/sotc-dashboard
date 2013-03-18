@@ -19,18 +19,22 @@
 </head>
 
 <body>
-  <h2 class="headline centered">Sound of the City</h2>
-  <h3 class="sub-headline centered">Dashboard</h3>
+  <div id="header">
+    <div id="logo">&nbsp;</div>
 
-  <div id="page-content">
+    <div id="title"><span class="dark">.dash</span><span class="light">board</span></div>
+  </div>
+  <div style="clear: both;"></div>
 
-    <h3 class="paragraph-headline">Live-Statistik</h3>
+  <div id="content">
 
-    <div class="content-always">
+    <h3>Live-Statistik</h3>
+
+    <div class="tabs-content-always">
       <div><img id="live" class="chart" src="#" alt="Live-Statistik" /></div>
     </div>
 
-    <h3 class="paragraph-headline">Geräuschmessungen</h3>
+    <h3>Geräuschmessungen</h3>
 
     <div id="block-noiseLevels">
       <ul class="tabs">
@@ -38,13 +42,13 @@
           <li><a href="#">12 Monate</a></li>
       </ul>
 
-      <div class="content">
+      <div class="tabs-content">
           <div><img class="chart" src="chart.php?type=noiseLevels&amp;mode=today" alt="Ger&auml;schmessungen heute" /></div>
           <div><img class="chart" src="chart.php?type=noiseLevels&amp;mode=last-months" alt="Ger&auml;schmessungen der letzten 12 Monate" /></div>
       </div>
     </div>
 
-    <h3 class="paragraph-headline">Audioaufnahmen</h3>
+    <h3>Audioaufnahmen</h3>
 
     <div id="block-soundSamples">
       <ul class="tabs">
@@ -52,13 +56,13 @@
           <li><a href="#">12 Monate</a></li>
       </ul>
 
-      <div class="content">
+      <div class="tabs-content">
           <div><img class="chart" src="chart.php?type=soundSamples&amp;mode=today" alt="Audioaufnahmen heute" /></div>
           <div><img class="chart" src="chart.php?type=soundSamples&amp;mode=last-months" alt="Audioaufnahmen der letzten 12 Monate" /></div>
       </div>
     </div>
 
-    <h3 class="paragraph-headline">Geräteinformationen</h3>
+    <h3>Geräteinformationen</h3>
 
     <div id="block-deviceInfos">
       <ul class="tabs">
@@ -66,13 +70,13 @@
           <li><a href="#">12 Monate</a></li>
       </ul>
 
-      <div class="content">
+      <div class="tabs-content">
           <div><img class="chart" src="chart.php?type=deviceInfos&amp;mode=today" alt="Ger&auml;teinformationen heute" /></div>
           <div><img class="chart" src="chart.php?type=deviceInfos&amp;mode=last-months" alt="Ger&auml;teinformationen der letzten 12 Monate" /></div>
       </div>
     </div>
 
-    <h3 class="paragraph-headline">Individuelle Nutzer</h3>
+    <h3>Individuelle Nutzer</h3>
 
     <div id="block-uniqueUsers">
       <ul class="tabs">
@@ -80,7 +84,7 @@
           <li><a href="#">12 Monate</a></li>
       </ul>
 
-      <div class="content">
+      <div class="tabs-content">
           <div><img class="chart" src="chart.php?type=uniqueUsers&amp;mode=today" alt="Individuelle Nutzer heute" /></div>
           <div><img class="chart" src="chart.php?type=uniqueUsers&amp;mode=last-months" alt="Individuelle Nutzer der letzten 12 Monate" /></div>
       </div>
