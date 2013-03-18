@@ -34,17 +34,21 @@
       <div><img id="live" class="chart" src="#" alt="Live-Statistik" /></div>
     </div>
 
-    <h3>Geräuschmessungen</h3>
+    <h3>Ger&auml;uschmessungen</h3>
 
     <div id="block-noiseLevels">
       <ul class="tabs">
           <li><a href="#">Heute</a></li>
+          <li><a href="#">7 Tage</a></li>
           <li><a href="#">12 Monate</a></li>
+          <li><a href="#">Total</a></li>
       </ul>
 
       <div class="tabs-content">
           <div><img class="chart" src="chart.php?type=noiseLevels&amp;mode=today" alt="Ger&auml;schmessungen heute" /></div>
+          <div>TODO</div>
           <div><img class="chart" src="chart.php?type=noiseLevels&amp;mode=last-months" alt="Ger&auml;schmessungen der letzten 12 Monate" /></div>
+          <div>TODO</div>
       </div>
     </div>
 
@@ -53,26 +57,34 @@
     <div id="block-soundSamples">
       <ul class="tabs">
           <li><a href="#">Heute</a></li>
+          <li><a href="#">7 Tage</a></li>
           <li><a href="#">12 Monate</a></li>
+          <li><a href="#">Total</a></li>
       </ul>
 
       <div class="tabs-content">
           <div><img class="chart" src="chart.php?type=soundSamples&amp;mode=today" alt="Audioaufnahmen heute" /></div>
+          <div>TODO</div>
           <div><img class="chart" src="chart.php?type=soundSamples&amp;mode=last-months" alt="Audioaufnahmen der letzten 12 Monate" /></div>
+          <div>TODO</div>
       </div>
     </div>
 
-    <h3>Geräteinformationen</h3>
+    <h3>Ger&auml;teinformationen</h3>
 
     <div id="block-deviceInfos">
       <ul class="tabs">
           <li><a href="#">Heute</a></li>
+          <li><a href="#">7 Tage</a></li>
           <li><a href="#">12 Monate</a></li>
+          <li><a href="#">Total</a></li>
       </ul>
 
       <div class="tabs-content">
           <div><img class="chart" src="chart.php?type=deviceInfos&amp;mode=today" alt="Ger&auml;teinformationen heute" /></div>
+          <div>TODO</div>
           <div><img class="chart" src="chart.php?type=deviceInfos&amp;mode=last-months" alt="Ger&auml;teinformationen der letzten 12 Monate" /></div>
+          <div>TODO</div>
       </div>
     </div>
 
@@ -81,12 +93,16 @@
     <div id="block-uniqueUsers">
       <ul class="tabs">
           <li><a href="#">Heute</a></li>
+          <li><a href="#">7 Tage</a></li>
           <li><a href="#">12 Monate</a></li>
+          <li><a href="#">Total</a></li>
       </ul>
 
       <div class="tabs-content">
           <div><img class="chart" src="chart.php?type=uniqueUsers&amp;mode=today" alt="Individuelle Nutzer heute" /></div>
+          <div>TODO</div>
           <div><img class="chart" src="chart.php?type=uniqueUsers&amp;mode=last-months" alt="Individuelle Nutzer der letzten 12 Monate" /></div>
+          <div>TODO</div>
       </div>
     </div>
 
