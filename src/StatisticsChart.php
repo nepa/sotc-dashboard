@@ -3,7 +3,7 @@
 require_once('RESTClient.php');
 
 require_once('pChart/class/pData.class.php');
-require_once('pChart/class/pDraw.class.php');
+require_once('pDraw.custom.php');
 require_once('pChart/class/pImage.class.php');
 
 /**
