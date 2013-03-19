@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Proxy to draw charts with use statistics.
+ */
+
 require_once('TodayChart.php');
 require_once('LastMonthsChart.php');
 

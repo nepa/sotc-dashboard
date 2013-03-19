@@ -5,28 +5,33 @@
 /** Import Droid Sans Bold font from Google CDN. */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:700);
 
-body {
+body
+{
   font-family: Arial, Helvetica, sans-serif;
-
   background-image: url('../img/bg.png');
 }
 
-div#header {
+div#header
+{
   width: 85%;
   height: 180px;
-  margin-top: 20px;
+
+  margin: 20px auto;
+  padding: 0 30px;
 }
 
-div#logo {
+div#logo
+{
   float: left;
   width: 305px;
   height: 157px;
-  margin-left: 125px;
+
   background-image: url('../img/logo.png');
   background-repeat: no-repeat;
 }
 
-div#title {
+div#title
+{
   float: left;
   margin-left: 70px;
   margin-top: 20px;
@@ -36,15 +41,29 @@ div#title {
   text-shadow: 3px 3px 3px #555555;
 }
 
-div#title .dark {
+/** Resize site header on small screens. */
+@media handheld, only screen and (max-width: 1024px)
+{
+  div#title
+  {
+    margin-left: 30px;
+    margin-top: 40px;
+    font-size: 450%;
+  }
+}
+
+div#title .dark
+{
   color: #333333;
 }
 
-div#title .light {
+div#title .light
+{
   color: #CCCCCC;
 }
 
-div#content {
+div#content
+{
   width: 85%;
 
   margin: 0 auto;
@@ -58,7 +77,8 @@ div#content {
   box-shadow: 5px 5px 5px #CCCCCC;
 }
 
-div#footer {
+div#footer
+{
   margin-top: 25px;
   margin-bottom: 25px;
 
@@ -66,7 +86,8 @@ div#footer {
   text-align: center;
 }
 
-h3 {
+h3
+{
   margin: 0;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -80,15 +101,19 @@ h3 {
 }
 
 .tabs-content,
-.tabs-content-always {
+.tabs-content-always
+{
   width: 700px;
   height: 230px;
   padding: 0px;
-  background-image: url('../img/ajax_loader.gif');
+
+  background-image: url('../img/loader.gif');
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-img.chart {
-  display: none; /** Hide charts on default. jQuery will show them when fully loaded. */
+/** Hide charts on default. jQuery will show them when fully loaded. */
+img.chart
+{
+  display: none;
 }

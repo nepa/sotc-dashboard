@@ -18,7 +18,8 @@ function refreshImage(url)
   $loader.attr('src', url + '&' + timestamp);
 
   // Show new image when loaded
-  if ($loader.complete) {
+  if ($loader.complete)
+  {
     $loader.trigger('load');
   }
 
