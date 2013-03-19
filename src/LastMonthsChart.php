@@ -59,7 +59,7 @@ class LastMonthsChart extends StatisticsChart
       $month = substr($lastMonthsData[$i]['Month'], 5, 2);
       $year =  substr($lastMonthsData[$i]['Month'], 2, 2);
 
-      $labels[] = DateTimeHelper::germanNameOf($month, true) . ' \'' . $year;
+      $labels[] = DateTimeHelper::germanNameOfMonth($month, true) . ' \'' . $year;
     }
 
     // Assign labels to X axis

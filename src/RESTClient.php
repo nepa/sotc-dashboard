@@ -5,8 +5,8 @@ require_once('DateTimeHelper.php');
 /**
  * This class contains a REST client to query the use statistics
  * resource of the SotC REST API. More specific, this class uses
- * the summary method to get an overview of reports today and
- * within the last twelve months.
+ * the summary method to get an overview of reports today, in the
+ * current week and within the last twelve months.
  *
  * On default, the data is only fetched once from the remote site,
  * and can then be read locally multiple times (mostly for reasons
@@ -113,10 +113,10 @@ class RESTClient
 
   /**
    * Access selected segments of the cached use statistics.
-   * Currently, the data is divided into two sections, namely
-   * 'today' for accumulated information about the current day
-   * and 'last-months' for a statistics summary of the last
-   * twelve months.
+   * Currently, the data is divided into three sections, namely
+   * 'today' for accumulated information about the current day,
+   * 'week' for data of the current week and 'last-months' for
+   * a statistics summary of the last twelve months.
    */
   public function getData($segment = 'today')
   {
@@ -129,6 +129,14 @@ class RESTClient
         isset($this->cachedData['StatisticsSummary']['SummaryData']['Today']))
     {
       $result = $this->cachedData['StatisticsSummary']['SummaryData']['Today'];
+    }
+    // Select segment with data for current week
+    else if ($segment == 'week' &&
+             isset($this->cachedData['StatisticsSummary']) &&
+             isset($this->cachedData['StatisticsSummary']['SummaryData']) &&
+             isset($this->cachedData['StatisticsSummary']['SummaryData']['CurrentWeek']))
+    {
+      $result = $this->cachedData['StatisticsSummary']['SummaryData']['CurrentWeek'];
     }
     // Select segment with data about last 12 months
     else if ($segment == 'last-months' &&

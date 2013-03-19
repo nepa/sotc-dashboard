@@ -5,6 +5,7 @@
  */
 
 require_once('TodayChart.php');
+require_once('WeekChart.php');
 require_once('LastMonthsChart.php');
 
 // Validate URL arguments
@@ -18,6 +19,11 @@ if (isset($_GET['type']) && isset($_GET['mode']))
   if ($mode == 'today')
   {
     $chart = new TodayChart($type);
+  }
+  // Create chart for current week
+  else if ($mode == 'week')
+  {
+    $chart = new WeekChart($type);
   }
   // Create chart for last months
   else if ($mode == 'last-months')

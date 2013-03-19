@@ -8,7 +8,7 @@ The project [Sound of the City](http://citysound.itm.uni-luebeck.de) (SotC) was 
 
 In its initial implementation, the service used SOAP for client-server-communication. [Server One](https://github.com/nepa/Server-One), the media backend of SotC, is available as open-source software on GitHub. Although the repository is outdated, it gives a good impression of the project's capabilities. Later the [Sound of the City REST API](https://github.com/nepa/sotc-rest-api) was introduced, to achieve better access to the available data. Interested parties are invited to join the project and build their own SotC-based applications.
 
-With the Sound of the City Dashboard, we now provide a statistics tool based on the SotC REST API. The application can fetch accumulated use data from the live server and visualizes it in various charts. All diagrams are drawn dynamically, in order to show most recent information about, for example, noise level reports, sample uploads and unique users.
+With the Sound of the City Dashboard, we now provide a statistics tool based on the SotC REST API. The application can fetch accumulated use data from the live server and visualizes it in various charts. All diagrams are drawn dynamically, in order to show most recent information about, for example, noise level reports, sample uploads and service users.
 
 ## Architecture
 

@@ -46,6 +46,12 @@ class DateTimeHelper
     return array_reverse($result);
   }
 
+  // TODO: Add comment
+  public static function getTimestampsOfCurrentWeek()
+  {
+    // TODO: Implement method
+  }
+
   /**
    * Calculate beginning and end of a month as UNIX timestamp.
    * Begin is 00:00:00 of first day, end is 23:59:00 of last
@@ -113,6 +119,96 @@ class DateTimeHelper
   }
 
   /**
+   * Translate number of a day to the corresponding English
+   * name of it (e.g. '1' is mapped to 'Monday'). With the
+   * optional second parameter set to true, the method will
+   * return abbreviated names (e.g. '1' is mapped to 'Mon.').
+   *
+   * For invalid day numbers, the function will simply
+   * return an empty string.
+   */
+  public static function englishNameOfDay($day, $short = false)
+  {
+    $result = '';
+
+    if ($day == 1)
+    {
+      $result = ($short ? 'Mon.' : 'Monday');
+    }
+    else if ($day == 2)
+    {
+      $result = ($short ? 'Tue.' : 'Tuesday');
+    }
+    else if ($day == 3)
+    {
+      $result = ($short ? 'Wed.' : 'Wednesday');
+    }
+    else if ($day == 4)
+    {
+      $result = ($short ? 'Thu.' : 'Thursday');
+    }
+    else if ($day == 5)
+    {
+      $result = ($short ? 'Fri.' : 'Friday');
+    }
+    else if ($day == 6)
+    {
+      $result = ($short ? 'Sat.' : 'Saturday');
+    }
+    else if ($day == 7)
+    {
+      $result = ($short ? 'Sun.' : 'Sunday');
+    }
+
+    return $result;
+  }
+
+  /**
+   * Translate number of a day to the corresponding German
+   * name of it (e.g. '1' is mapped to 'Montag'). With the
+   * optional second parameter set to true, the method will
+   * return abbreviated names (e.g. '1' is mapped to 'Mon.').
+   *
+   * For invalid day numbers, the function will simply
+   * return an empty string.
+   */
+  public static function germanNameOfDay($day, $short = false)
+  {
+    $result = '';
+
+    if ($day == 1)
+    {
+      $result = ($short ? 'Mo.' : 'Montag');
+    }
+    else if ($day == 2)
+    {
+      $result = ($short ? 'Di.' : 'Dienstag');
+    }
+    else if ($day == 3)
+    {
+      $result = ($short ? 'Mi.' : 'Mittwoch');
+    }
+    else if ($day == 4)
+    {
+      $result = ($short ? 'Do.' : 'Donnerstag');
+    }
+    else if ($day == 5)
+    {
+      $result = ($short ? 'Fr.' : 'Freitag');
+    }
+    else if ($day == 6)
+    {
+      $result = ($short ? 'Sa.' : 'Samstag');
+    }
+    else if ($day == 7)
+    {
+      $result = ($short ? 'So.' : 'Sonntag');
+    }
+
+    return $result;
+  }
+
+  /**
    * Translate number of a month to the corresponding English
    * name of it (e.g. '1' is mapped to 'January'). With the
    * optional second parameter set to true, the method will
@@ -121,7 +217,7 @@ class DateTimeHelper
    * For invalid month numbers, the function will simply
    * return an empty string.
    */
-  public static function englishNameOf($month, $short = false)
+  public static function englishNameOfMonth($month, $short = false)
   {
     $result = '';
 
@@ -186,7 +282,7 @@ class DateTimeHelper
    * For invalid month numbers, the function will simply
    * return an empty string.
    */
-  public static function germanNameOf($month, $short = false)
+  public static function germanNameOfMonth($month, $short = false)
   {
     $result = '';
 
