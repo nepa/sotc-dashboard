@@ -72,8 +72,8 @@ class DateTimeHelper
     {
       // Format: YYYY-mm-dd
       $dateString = date('Y', $timestamp) . '-' .
-                    date('m', $timestamp) . '-' . // TODO: Format modifier for 2 digits month?
-                    date('j', $timestamp); // TODO: Format modifier for 2 digits day?
+                    date('m', $timestamp) . '-' .
+                    date('d', $timestamp);
 
       // Format: UNIX timestamp
       $beginTimestamp = $timestamp;
@@ -407,10 +407,10 @@ class DateTimeHelper
     for ($i = 0; $i < count($lastDays); $i++)
     {
       echo '<br /><br />Begin of ' . $lastDays[$i]['date'] . ': ' . $lastDays[$i]['begin'] .
-        ' (= ' . date('Y-m-j, H:i:s', $lastDays[$i]['begin']) . ')'; // TODO: Check format modifiers
+        ' (= ' . date('Y-m-d, H:i:s', $lastDays[$i]['begin']) . ')';
 
       echo '<br />End of ' . $lastDays[$i]['date'] . ': ' . $lastDays[$i]['end'] .
-        ' (= ' . date('Y-m-j, H:i:s', $lastDays[$i]['end']) . ')'; // TODO: Check format modifiers
+        ' (= ' . date('Y-m-d, H:i:s', $lastDays[$i]['end']) . ')';
     }
   }
 
@@ -428,7 +428,5 @@ class DateTimeHelper
     }
   }
 }
-
-DateTimeHelper::__testCurrentWeekTimestamps();
 
 ?>
