@@ -46,15 +46,53 @@ class DateTimeHelper
     return array_reverse($result);
   }
 
-  // TODO: Add comment
+  /**
+   * Get UNIX timestamps for last seven days as an associative
+   * array. The array contains a human-readable version of the
+   * day's date, as well as UNIX timestamps for each the start
+   * and end of the day (i.e. 00:00:00 for the beginning and
+   * 23:59:59 for the end).
+   *
+   * Current day is last element of the array. Array elements
+   * have 'date', 'begin' and 'end' as their keys.
+   */
   public static function getTimestampsOfCurrentWeek()
   {
-    // TODO: Implement method
+    $result = array();
+
+    $currentDay = date('j');
+    $currentMonth = date('n');
+    $currentYear = date('Y');
+
+    // Timestamp for begin of current day
+    $timestamp = mktime(0, 0, 0, $currentMonth, $currentDay, $currentYear);
+
+    // Iterate last 7 days
+    for ($i = 0; $i < 7; $i++)
+    {
+      // Format: YYYY-mm-dd
+      $dateString = date('Y', $timestamp) . '-' .
+                    date('m', $timestamp) . '-' . // TODO: Format modifier for 2 digits month?
+                    date('j', $timestamp); // TODO: Format modifier for 2 digits day?
+
+      // Format: UNIX timestamp
+      $beginTimestamp = $timestamp;
+
+      // Format: UNIX timestamp
+      $endTimestamp = $beginTimestamp + (24 * 3600) - 1; // Plus one day - 1 second
+
+      $result[] = array('date' => $dateString, 'begin' => $beginTimestamp, 'end' => $endTimestamp);
+
+      $timestamp -= (24 * 3600); // Begin of last day
+    }
+
+    // Reverse array before returning
+    return array_reverse($result);
   }
 
   /**
    * Calculate beginning and end of a month as UNIX timestamp.
-   * Begin is 00:00:00 of first day, end is 23:59:00 of last
+   * Begin is 00:00:00 of first day, end is 23:59:59 of last
    * day if month is over or current timestamp if month is not
    * yet over.
    *
@@ -67,7 +105,7 @@ class DateTimeHelper
     $lastDayOfMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
     $beginTimestamp = mktime(0, 0, 0, $month, 1, $year);
-    $endTimestamp = mktime(23, 59, 0, $month, $lastDayOfMonth, $year);
+    $endTimestamp = mktime(23, 59, 59, $month, $lastDayOfMonth, $year);
 
     // Current month is not yet over
     if ($month == $currentMonth)
@@ -339,8 +377,8 @@ class DateTimeHelper
   }
 
   /**
-   * This method is used to test getLastTwelveMonths()
-   * and getTimestampsOfMonth() function.
+   * This method is used to test the getLastTwelveMonths()
+   * and the getTimestampsOfMonth() function.
    */
   public static function __testMonthTimestamps()
   {
@@ -358,7 +396,26 @@ class DateTimeHelper
   }
 
   /**
-   * This method is used to test getTimestampsOfToday()
+   * This method is used to test the getTimestampsOfCurrentWeek()
+   * function.
+   */
+  public static function __testCurrentWeekTimestamps()
+  {
+    $lastDays = DateTimeHelper::getTimestampsOfCurrentWeek();
+
+    // Print date, timestamp and human-readable version of timestamp
+    for ($i = 0; $i < count($lastDays); $i++)
+    {
+      echo '<br /><br />Begin of ' . $lastDays[$i]['date'] . ': ' . $lastDays[$i]['begin'] .
+        ' (= ' . date('Y-m-j, H:i:s', $lastDays[$i]['begin']) . ')'; // TODO: Check format modifiers
+
+      echo '<br />End of ' . $lastDays[$i]['date'] . ': ' . $lastDays[$i]['end'] .
+        ' (= ' . date('Y-m-j, H:i:s', $lastDays[$i]['end']) . ')'; // TODO: Check format modifiers
+    }
+  }
+
+  /**
+   * This method is used to test the getTimestampsOfToday()
    * function.
    */
   public static function __testDayTimestamps()
@@ -371,5 +428,7 @@ class DateTimeHelper
     }
   }
 }
+
+DateTimeHelper::__testCurrentWeekTimestamps();
 
 ?>
