@@ -54,12 +54,14 @@ class WeekChart extends StatisticsChart
     $labels = array();
     for ($i = 0; $i < count($currentWeekData); $i++)
     {
-      // TODO: Extract day of week
-      // Format in data array is: YYYY-mm-dd
-      // We cut it down to: nameOf(dd)
-      $day = substr($currentWeekData[$i]['Week'], 8, 2);
+      $today = $currentWeekData[$i]['Date'];
 
-      $labels[] = DateTimeHelper::germanNameOfDay($day, true);
+      // Format in data array is: YYYY-mm-dd
+      // We cut it down to: nameOf(dd), dd.mm.
+      $day = date('N', strtotime($today)); // 1 (Monday) to 7 (Sunday)
+      $date = substr($today, 8, 2) . '.' . substr($today, 5, 2) . '.';
+
+      $labels[] = DateTimeHelper::germanNameOfDay($day, true) . ', ' . $date;
     }
 
     // Assign labels to X axis
