@@ -3,14 +3,14 @@
   *
   * A default selected tab can be provided via URL parameter:
   *
-  *   http://example.com?default=2
+  *   http://example.com?tab=2
   */
 
 (function ($) {
   $.fn.myTabs = function (options) {
     options = $.extend({
       'tabSelectedClass': 'current', // Name of class that is added to current tag
-      'queryName': 'default' // Name of URL parameter for default tab
+      'queryName': 'tab' // Name of URL parameter for default tab
     }, options);
 
     return this.each(function () {
