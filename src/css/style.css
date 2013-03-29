@@ -94,7 +94,7 @@ h3
   padding: 0;
 
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 160%;
   font-weight: normal;
   color: #292929;
   text-shadow: 0px 1px 2px #555555;
@@ -110,10 +110,35 @@ h3
   background-image: url('../img/loader.gif');
   background-repeat: no-repeat;
   background-position: center center;
+
+  border: 1px solid #000000;
 }
 
 /** Hide charts on default. jQuery will show them when fully loaded. */
 img.chart
 {
   display: none;
+  width: 700px;
+  height: 230px;
+}
+
+.tabs-content div.total
+{
+  padding: 20px;
+}
+
+.tabs-content div.total p
+{
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+span.counter
+{
+  padding-left: 30px;
+
+  font-size: 140%;
+  font-weight: normal;
+  color: #292929;
+  text-shadow: 0px 1px 2px #555555;
 }
