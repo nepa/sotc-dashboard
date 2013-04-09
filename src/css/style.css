@@ -110,8 +110,6 @@ h3
   background-image: url('../img/loader.gif');
   background-repeat: no-repeat;
   background-position: center center;
-
-  border: 1px solid #000000;
 }
 
 /** Hide charts on default. jQuery will show them when fully loaded. */
@@ -124,7 +122,17 @@ img.chart
 
 .tabs-content div.total
 {
+  width: 658px; /** 700px minus padding and border */
+  height: 188px; /** 230px minus padding and border */
   padding: 20px;
+
+  background-color: #E0E0E0; /** Old browsers */
+  background-image: -moz-linear-gradient(top, #E3E3E3 17%, #B4B4B4 100%);
+  background-image: -webkit-linear-gradient(top, #E3E3E3 17%, #B4B4B4 100%);
+  background-image: -khtml-linear-gradient(top, #E3E3E3 17%, #B4B4B4 100%);
+  background-image: linear-gradient(top, #E3E3E3 17%, #B4B4B4 100%);
+
+  border: 1px solid #000000;
 }
 
 .tabs-content div.total p

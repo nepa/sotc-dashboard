@@ -6,6 +6,8 @@
   * The position of the axis names was changed, to better
   * suit individual needs. Search for "seidel" in this
   * file to find the locations where code was changed.
+  *
+  * Furthermore, the scaling was fixed to start at zero.
   */
 
 
@@ -2611,7 +2613,7 @@
      else
       {
        /* If all values are the same we keep a +1/-1 scale */
-       $Rows = 2; $XMin = $XMax-1; $XMax = $XMax+1; $RowHeight = 1;
+       $Rows = 2; $XMin = 0; $XMax = $XMax+1; $RowHeight = 1; // seidel: Changed this from $XMin = $XMax-1
 
        /* Return the results */
        $Scale["Rows"] = $Rows; $Scale["RowHeight"] = $RowHeight; $Scale["XMin"] = $XMin;  $Scale["XMax"] = $XMax;
