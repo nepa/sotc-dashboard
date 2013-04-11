@@ -23,11 +23,22 @@ div#header
 div#logo
 {
   float: left;
+}
+
+div#logo a
+{
+  display: block;
+
   width: 305px;
   height: 157px;
 
   background-image: url('../img/logo.png');
   background-repeat: no-repeat;
+
+  /** Hide text, only show background image */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 div#title
