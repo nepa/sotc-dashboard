@@ -10,14 +10,6 @@ In its initial implementation, the service used SOAP for client-server-communica
 
 With the Sound of the City Dashboard, we now provide a statistics tool based on the SotC REST API. The application can fetch accumulated use data from the live server and visualizes it in various charts. All diagrams are drawn dynamically, in order to show most recent information about, for example, noise level reports, sample uploads and service users.
 
-## Architecture
-
-TODO
-
-## History
-
-TODO
-
 ## Author
 
 The SotC Dashboard was written by: **Sascha Seidel**, NetPanther@gmx.net
