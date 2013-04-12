@@ -5,7 +5,10 @@
 // Load live chart for the very first time
 refreshImage('chart.php?type=noiseLevels&mode=today');
 
-// Create tabs for each block
+// Load data for 'Total' tabs
+refreshTotals();
+
+// Initialize tabs for each block
 $(document).ready(function () {
   $('div#block-noiseLevels').myTabs();
   $('div#block-soundSamples').myTabs();

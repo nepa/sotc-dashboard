@@ -1,6 +1,6 @@
 <?php
 
-require_once('RESTClient.php');
+require_once('SummaryClient.php');
 
 require_once('pChart/class/pData.class.php');
 require_once('pDraw.custom.php');
@@ -53,7 +53,7 @@ abstract class StatisticsChart
     $this->contentTypeName = $this->mapContentType($contentType);
 
     // Connect to remote server and fetch data
-    $this->client = new RESTClient($contentType);
+    $this->client = new SummaryClient($contentType);
     $this->client->refreshStatistics();
 
     // Parse data from remote server
