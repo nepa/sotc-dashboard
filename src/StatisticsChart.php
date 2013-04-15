@@ -144,7 +144,7 @@ abstract class StatisticsChart
    *   - uniqueUsers
    *   - appDownloads
    */
-  private function mapContentType($contentType)
+  protected function mapContentType($contentType)
   {
     $result = '';
 

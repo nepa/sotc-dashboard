@@ -23,6 +23,6 @@ function refreshImage(url)
     $loader.trigger('load');
   }
 
-  // Refresh image every 3 seconds
-  window.setTimeout('refreshImage(\'' + url + '\')', 3000);
+  // Refresh image every 5 seconds
+  window.setTimeout('refreshImage(\'' + url + '\')', 5000);
 }

@@ -3,7 +3,7 @@
  */
 
 // Load live chart for the very first time
-refreshImage('chart.php?type=noiseLevels&mode=today');
+refreshImage('chart.php?mode=live');
 
 // Load data for 'Total' tabs
 refreshTotals();

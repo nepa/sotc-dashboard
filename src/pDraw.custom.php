@@ -2068,7 +2068,7 @@
 
              if ( isset($Parameters["Name"]) && !$RemoveXAxis)
               {
-               $YPos   = $MaxBottom+7; // seidel: Changed this from $MaxBottom+2
+               $YPos   = $MaxBottom+7; // seidel: Changed this from $MaxBottom+2 to move label on x axis down
                $XPos   = $this->GraphAreaX1+($this->GraphAreaX2-$this->GraphAreaX1)/2;
                $Bounds = $this->drawText($XPos,$YPos,$Parameters["Name"],array("Align"=>TEXT_ALIGN_TOPMIDDLE));
                $MaxBottom = $Bounds[0]["Y"];
@@ -2348,7 +2348,7 @@
 
              if ( isset($Parameters["Name"]) )
               {
-               $XPos    = $MinLeft-7; // seidel: Changed this from $MinLeft-2
+               $XPos    = $MinLeft-7; // seidel: Changed this from $MinLeft-2 to move label on y axis left
                $YPos    = $this->GraphAreaY1+($this->GraphAreaY2-$this->GraphAreaY1)/2;
                $Bounds  = $this->drawText($XPos,$YPos,$Parameters["Name"],array("Align"=>TEXT_ALIGN_BOTTOMMIDDLE,"Angle"=>90));
                $MinLeft = $Bounds[2]["X"];
@@ -2394,7 +2394,7 @@
 
              if ( isset($Parameters["Name"]) )
               {
-               $XPos    = $MaxLeft+6;
+               $XPos    = $MaxLeft+11; // seidel: Changed this from $MaxLeft+6 to move label on y axis right
                $YPos    = $this->GraphAreaY1+($this->GraphAreaY2-$this->GraphAreaY1)/2;
                $Bounds  = $this->drawText($XPos,$YPos,$Parameters["Name"],array("Align"=>TEXT_ALIGN_BOTTOMMIDDLE,"Angle"=>270));
                $MaxLeft = $Bounds[2]["X"];
@@ -2613,7 +2613,7 @@
      else
       {
        /* If all values are the same we keep a +1/-1 scale */
-       $Rows = 2; $XMin = 0; $XMax = $XMax+1; $RowHeight = 1; // seidel: Changed this from $XMin = $XMax-1
+       $Rows = 2; $XMin = 0; $XMax = $XMax+1; $RowHeight = 1; // seidel: Changed this from $XMin = $XMax-1 to start bars at zero
 
        /* Return the results */
        $Scale["Rows"] = $Rows; $Scale["RowHeight"] = $RowHeight; $Scale["XMin"] = $XMin;  $Scale["XMax"] = $XMax;

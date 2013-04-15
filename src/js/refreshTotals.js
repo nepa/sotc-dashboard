@@ -40,6 +40,6 @@ function refreshTotals()
     }
   });
 
-  // Refresh totals every 3 seconds
-  window.setTimeout('refreshTotals()', 3000);
+  // Refresh totals every 5 seconds
+  window.setTimeout('refreshTotals()', 5000);
 }
